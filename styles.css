@@ -205,27 +205,136 @@ h2::after {
     border-radius: 3px;
 }
 
-/* Formulário de Contato */
-.contact-form {
-    background: white;
+/* Seção de Contato Atualizada */
+.contact {
+    background: linear-gradient(170deg, #f8f9fa 0%, #ffffff 100%);
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-info {
+    background: var(--gradient-primary);
     padding: 3rem;
     border-radius: 15px;
-    box-shadow: var(--shadow-md);
+    color: white;
+}
+
+.contact-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    font-size: 1.2rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--text-color);
 }
 
 .contact-form input,
 .contact-form textarea {
+    width: 100%;
     padding: 1rem;
     border: 2px solid #eee;
     border-radius: 8px;
     font-size: 1rem;
     transition: var(--transition);
+    background: white;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     border-color: var(--primary-color);
     outline: none;
+    box-shadow: 0 0 0 3px rgba(58, 125, 68, 0.1);
+}
+
+.submit-button {
+    background: var(--gradient-primary);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.submit-button i {
+    transition: var(--transition);
+}
+
+.submit-button:hover i {
+    transform: translateX(3px);
+}
+
+/* Responsividade atualizada */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        padding: 2rem;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
 }
 
 /* Responsividade */
