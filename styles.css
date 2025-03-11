@@ -257,43 +257,54 @@ body {
     }
 }
 
-/* Animações */
+/* Animações atualizadas */
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px) scale(0.95);
+        filter: blur(5px);
     }
     to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
+        filter: blur(0);
     }
 }
 
 @keyframes floatAnimation {
     0% {
-        transform: translateY(0px);
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+    25% {
+        transform: translate(10px, -15px) rotate(5deg);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translate(-5px, -25px) rotate(-3deg);
+    }
+    75% {
+        transform: translate(-15px, -15px) rotate(-5deg);
     }
     100% {
-        transform: translateY(0px);
+        transform: translate(0px, 0px) rotate(0deg);
     }
 }
 
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
+        background-size: 200% 200%;
     }
     50% {
         background-position: 100% 50%;
+        background-size: 250% 250%;
     }
     100% {
         background-position: 0% 50%;
+        background-size: 200% 200%;
     }
 }
 
-/* Atualização do Hero Section */
+/* Hero Section atualizado */
 .hero {
     padding: 8rem 5% 4rem;
     min-height: 100vh;
@@ -306,34 +317,60 @@ body {
 
 .hero-content {
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-text {
     flex: 1;
-    animation: fadeInUp 1s ease-out;
+    max-width: 600px;
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 4rem;
     line-height: 1.2;
     margin-bottom: 1.5rem;
+    color: var(--text-color);
+    position: relative;
+    animation: fadeInUp 1s ease-out;
+}
+
+.hero-text h1 .highlight {
     background: linear-gradient(120deg, var(--primary-color), #4a9d54, #2d6235);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradientShift 8s ease infinite;
+    display: inline-block;
+    padding: 0 0.2em;
+    position: relative;
+}
+
+.hero-text h1 .highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: rgba(163, 217, 165, 0.3);
+    z-index: -1;
+    transform: skewX(-15deg) translateY(5px);
 }
 
 .hero-text p {
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2.5rem;
+    line-height: 1.8;
     animation: fadeInUp 1s ease-out 0.3s backwards;
+    max-width: 90%;
 }
 
 .cta-group {
@@ -437,17 +474,19 @@ body {
 
 .floating-shape {
     position: absolute;
-    width: 300px;
-    height: 300px;
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
     background: var(--gradient-primary);
     opacity: 0.8;
-    animation: floatAnimation 6s ease-in-out infinite;
+    animation: floatAnimation 15s ease-in-out infinite;
+    filter: blur(0px);
+    transition: all 0.5s ease;
 }
 
 .floating-shape:nth-child(1) {
     top: 20%;
     left: 10%;
+    width: 300px;
+    height: 300px;
     background: linear-gradient(135deg, #3A7D44 0%, #4a9d54 100%);
     animation-delay: -2s;
 }
@@ -460,6 +499,7 @@ body {
     background: linear-gradient(135deg, #4a9d54 0%, #A3D9A5 100%);
     animation-delay: -1s;
     opacity: 0.6;
+    filter: blur(2px);
 }
 
 .highlight {
@@ -479,30 +519,44 @@ body {
     transform: skewX(-15deg);
 }
 
-/* Responsividade */
+/* Responsividade atualizada */
 @media (max-width: 968px) {
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+
+    .hero-text p {
+        font-size: 1.1rem;
+        max-width: 100%;
+    }
+
     .hero-content {
         flex-direction: column;
         text-align: center;
         gap: 2rem;
     }
 
-    .hero-text h1 {
-        font-size: 2.5rem;
+    .hero-text {
+        max-width: 100%;
     }
 
     .hero-decoration {
         height: 300px;
+        width: 100%;
     }
 
     .floating-shape {
-        width: 200px;
-        height: 200px;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 2.5rem;
     }
 
-    .floating-shape:nth-child(2) {
-        width: 150px;
-        height: 150px;
+    .hero-text p {
+        font-size: 1rem;
     }
 }
 
