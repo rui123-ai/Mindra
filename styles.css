@@ -105,6 +105,14 @@ body {
     max-width: 600px;
 }
 
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin-bottom: 2rem;
+    max-width: 580px;
+}
+
 .subtitle {
     font-size: 1.1rem;
     color: var(--primary-color);
