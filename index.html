@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
@@ -94,57 +95,7 @@
                 </div>
 
                 <div class="metrics-container">
-                    <div class="metric-card">
-                        <div class="metric-info">
-                            <h4>Economia de Tempo</h4>
-                            <div class="metric-bar">
-                                <div class="bar-fill" style="width: 85%"></div>
-                            </div>
-                            <div class="metric-value">
-                                <span class="number">85</span>
-                                <span class="percent">%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-info">
-                            <h4>Aumento de Eficiência</h4>
-                            <div class="metric-bar">
-                                <div class="bar-fill" style="width: 92%"></div>
-                            </div>
-                            <div class="metric-value">
-                                <span class="number">92</span>
-                                <span class="percent">%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-info">
-                            <h4>Qualidade dos Leads</h4>
-                            <div class="metric-bar">
-                                <div class="bar-fill" style="width: 78%"></div>
-                            </div>
-                            <div class="metric-value">
-                                <span class="number">78</span>
-                                <span class="percent">%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="metric-card">
-                        <div class="metric-info">
-                            <h4>Satisfação dos Clientes</h4>
-                            <div class="metric-bar">
-                                <div class="bar-fill" style="width: 95%"></div>
-                            </div>
-                            <div class="metric-value">
-                                <span class="number">95</span>
-                                <span class="percent">%</span>
-                            </div>
-                        </div>
-                    </div>
+                    <canvas id="metricsChart"></canvas>
                 </div>
             </div>
         </section>

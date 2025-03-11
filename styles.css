@@ -492,8 +492,9 @@ h2::after {
     padding: 2rem;
     border-radius: 15px;
     box-shadow: var(--shadow-sm);
-    max-width: 900px;
+    max-width: 1000px;
     margin: 3rem auto 0;
+    height: 400px; /* Altura fixa para o gráfico */
 }
 
 .metric-card {

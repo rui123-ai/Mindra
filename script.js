@@ -35,4 +35,97 @@ document.addEventListener('DOMContentLoaded', function() {
             contactForm.reset();
         });
     }
+
+    // Adicione o código do gráfico
+    const ctx = document.getElementById('metricsChart').getContext('2d');
+    
+    const gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient1.addColorStop(0, 'rgba(58, 125, 68, 1)');
+    gradient1.addColorStop(1, 'rgba(58, 125, 68, 0.1)');
+    
+    const gradient2 = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient2.addColorStop(0, 'rgba(163, 217, 165, 1)');
+    gradient2.addColorStop(1, 'rgba(163, 217, 165, 0.1)');
+    
+    const gradient3 = ctx.createLinearGradient(0, 0, 0, 400);
+    gradient3.addColorStop(0, 'rgba(41, 98, 255, 1)');
+    gradient3.addColorStop(1, 'rgba(41, 98, 255, 0.1)');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
+            datasets: [
+                {
+                    label: 'Produtividade',
+                    data: [65, 75, 62, 80, 75, 85, 87, 90],
+                    borderColor: '#3A7D44',
+                    backgroundColor: gradient1,
+                    tension: 0.4,
+                    fill: true
+                },
+                {
+                    label: 'Eficiência',
+                    data: [55, 65, 58, 70, 65, 75, 80, 85],
+                    borderColor: '#A3D9A5',
+                    backgroundColor: gradient2,
+                    tension: 0.4,
+                    fill: true
+                },
+                {
+                    label: 'Satisfação',
+                    data: [45, 55, 50, 60, 55, 65, 70, 75],
+                    borderColor: '#2962FF',
+                    backgroundColor: gradient3,
+                    tension: 0.4,
+                    fill: true
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            interaction: {
+                intersect: false,
+                mode: 'index'
+            },
+            plugins: {
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 20,
+                        font: {
+                            family: "'Poppins', sans-serif",
+                            size: 12
+                        }
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                    grid: {
+                        display: true,
+                        color: '#f0f0f0'
+                    },
+                    ticks: {
+                        font: {
+                            family: "'Poppins', sans-serif"
+                        }
+                    }
+                },
+                x: {
+                    grid: {
+                        display: false
+                    },
+                    ticks: {
+                        font: {
+                            family: "'Poppins', sans-serif"
+                        }
+                    }
+                }
+            }
+        }
+    });
 }); 
