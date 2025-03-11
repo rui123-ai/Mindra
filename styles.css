@@ -475,7 +475,7 @@ h2::after {
 
 .benefits-text {
     max-width: 900px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 2rem;
     text-align: center;
 }
 
@@ -579,7 +579,7 @@ h2::after {
 
 .metrics-grid {
     max-width: 900px;
-    margin: 3rem auto;
+    margin: 0 auto;
     display: grid;
     gap: 2rem;
     padding: 2rem;
