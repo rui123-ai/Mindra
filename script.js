@@ -39,44 +39,32 @@ document.addEventListener('DOMContentLoaded', function() {
     // Adicione o código do gráfico
     const ctx = document.getElementById('metricsChart').getContext('2d');
     
-    const gradient1 = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient1.addColorStop(0, 'rgba(58, 125, 68, 1)');
-    gradient1.addColorStop(1, 'rgba(58, 125, 68, 0.1)');
-    
-    const gradient2 = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient2.addColorStop(0, 'rgba(163, 217, 165, 1)');
-    gradient2.addColorStop(1, 'rgba(163, 217, 165, 0.1)');
-    
-    const gradient3 = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient3.addColorStop(0, 'rgba(41, 98, 255, 1)');
-    gradient3.addColorStop(1, 'rgba(41, 98, 255, 0.1)');
-
     new Chart(ctx, {
         type: 'line',
         data: {
-            labels: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago'],
+            labels: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'],
             datasets: [
                 {
-                    label: 'Produtividade',
-                    data: [65, 75, 62, 80, 75, 85, 87, 90],
-                    borderColor: '#3A7D44',
-                    backgroundColor: gradient1,
+                    label: 'Economia de Tempo',
+                    data: [6500, 7500, 5000, 2500, 4500, 4000, 2500, 2000],
+                    borderColor: '#00BCD4',
+                    backgroundColor: 'rgba(0, 188, 212, 0.1)',
                     tension: 0.4,
                     fill: true
                 },
                 {
-                    label: 'Eficiência',
-                    data: [55, 65, 58, 70, 65, 75, 80, 85],
-                    borderColor: '#A3D9A5',
-                    backgroundColor: gradient2,
+                    label: 'Eficiência Operacional',
+                    data: [5200, 6000, 4000, 2800, 2500, 1800, 1500, 1200],
+                    borderColor: '#FFA726',
+                    backgroundColor: 'rgba(255, 167, 38, 0.1)',
                     tension: 0.4,
                     fill: true
                 },
                 {
-                    label: 'Satisfação',
-                    data: [45, 55, 50, 60, 55, 65, 70, 75],
+                    label: 'Qualidade dos Resultados',
+                    data: [500, 3000, 2500, 4000, 3500, 6000, 5800, 6500],
                     borderColor: '#2962FF',
-                    backgroundColor: gradient3,
+                    backgroundColor: 'rgba(41, 98, 255, 0.1)',
                     tension: 0.4,
                     fill: true
                 }
@@ -106,12 +94,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 y: {
                     beginAtZero: true,
                     grid: {
-                        display: true,
-                        color: '#f0f0f0'
+                        color: 'rgba(0, 0, 0, 0.05)',
+                        drawBorder: false
                     },
                     ticks: {
                         font: {
                             family: "'Poppins', sans-serif"
+                        },
+                        callback: function(value) {
+                            return value.toLocaleString();
                         }
                     }
                 },
