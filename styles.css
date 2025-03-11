@@ -89,7 +89,8 @@ body {
     position: relative;
     overflow: hidden;
     background: linear-gradient(170deg, #f8f9fa 0%, #ffffff 100%);
-    min-height: 80vh;
+    min-height: auto;
+    padding-bottom: 2rem;
 }
 
 .hero-content {
@@ -100,12 +101,12 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: center;
-    min-height: 80vh;
+    min-height: auto;
     padding: 40px 5% 0;
 }
 
 .hero-text {
-    max-width: 800px;
+    max-width: 1000px;
     text-align: center;
     padding-top: 40px;
 }
@@ -372,9 +373,7 @@ h2::after {
 
 /* Seção de Benefícios */
 .benefits-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin-top: 3rem;
 }
 
 .benefits-title {
@@ -385,19 +384,18 @@ h2::after {
 }
 
 .benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
 .benefit-box {
     background: white;
-    padding: 1.5rem 1.2rem;
+    padding: 1.2rem 1rem;
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     text-align: center;
     border: 1px solid rgba(0,0,0,0.05);
+    margin-top: 0.5rem;
 }
 
 .benefit-box:hover {
@@ -434,10 +432,21 @@ h2::after {
     font-size: 0.95rem;
 }
 
+/* Ajustes para o título dentro do hero */
+.hero-text h2 {
+    font-size: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
 /* Responsividade para os benefícios */
 @media (max-width: 968px) {
-    .benefits-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero-text {
+        padding-top: 20px;
+    }
+    
+    .benefits-container {
+        margin-top: 2rem;
     }
 }
 
