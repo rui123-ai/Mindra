@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
             datasets: [
                 {
                     label: 'Economia de Tempo',
-                    data: [6500, 7500, 5000, 2500, 4500, 4000, 2500, 2000],
+                    data: [85, 92, 88, 95, 89, 93, 96, 98],
                     borderColor: '#00BCD4',
                     backgroundColor: 'rgba(0, 188, 212, 0.1)',
                     tension: 0.4,
@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 {
                     label: 'Eficiência Operacional',
-                    data: [5200, 6000, 4000, 2800, 2500, 1800, 1500, 1200],
+                    data: [78, 82, 85, 88, 92, 90, 94, 95],
                     borderColor: '#FFA726',
                     backgroundColor: 'rgba(255, 167, 38, 0.1)',
                     tension: 0.4,
@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 },
                 {
                     label: 'Qualidade dos Resultados',
-                    data: [500, 3000, 2500, 4000, 3500, 6000, 5800, 6500],
+                    data: [70, 75, 80, 85, 88, 92, 95, 97],
                     borderColor: '#2962FF',
                     backgroundColor: 'rgba(41, 98, 255, 0.1)',
                     tension: 0.4,
@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function() {
             scales: {
                 y: {
                     beginAtZero: true,
+                    max: 100,
                     grid: {
                         color: 'rgba(0, 0, 0, 0.05)',
                         drawBorder: false
@@ -102,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             family: "'Poppins', sans-serif"
                         },
                         callback: function(value) {
-                            return value.toLocaleString();
+                            return value + '%';
                         }
                     }
                 },
