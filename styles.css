@@ -829,4 +829,118 @@ h2::after {
     .metric-value {
         font-size: 1.1rem;
     }
+}
+
+/* Dropdown Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropdown .fa-chevron-down {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .fa-chevron-down {
+    transform: rotate(180deg);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    background: white;
+    min-width: 220px;
+    padding: 1rem 0;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 100;
+    
+    /* Efeito de vidro */
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(10px);
+}
+
+.dropdown-menu li {
+    list-style: none;
+}
+
+.dropdown-menu a {
+    color: var(--text-color);
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    display: block;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu a::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    transition: width 0.3s ease;
+}
+
+.dropdown-menu a:hover {
+    color: var(--primary-color);
+    background: rgba(58, 125, 68, 0.05);
+    padding-left: 2rem;
+}
+
+.dropdown-menu a:hover::before {
+    width: 12px;
+}
+
+/* Responsividade do Dropdown */
+@media (max-width: 968px) {
+    .dropdown-menu {
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        padding: 0.5rem 0 0.5rem 1rem;
+        border: none;
+        backdrop-filter: none;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        padding: 0.8rem 1rem;
+        font-size: 1rem;
+    }
+
+    .dropdown-menu a:hover {
+        background: transparent;
+    }
 } 
