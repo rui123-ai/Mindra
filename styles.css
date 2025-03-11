@@ -195,22 +195,22 @@ body {
 
 /* Seções Gerais */
 section {
-    padding: 4rem 5%;
+    padding: 2rem 5%;
 }
 
 h2 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     font-weight: 700;
     text-align: center;
     color: var(--text-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     position: relative;
 }
 
 h2::after {
     content: '';
     position: absolute;
-    bottom: -0.5rem;
+    bottom: -0.3rem;
     left: 50%;
     transform: translateX(-50%);
     width: 60px;
@@ -379,21 +379,21 @@ h2::after {
 
 .benefits-title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: var(--text-color);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 .benefits-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .benefit-box {
     background: white;
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
+    padding: 1.5rem 1.2rem;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
     text-align: center;
@@ -406,14 +406,14 @@ h2::after {
 }
 
 .benefit-icon {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
     background: var(--gradient-primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 auto 1rem;
+    margin: 0 auto 0.8rem;
 }
 
 .benefit-icon i {
@@ -423,15 +423,15 @@ h2::after {
 
 .benefit-box h4 {
     color: var(--primary-color);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
     font-weight: 600;
 }
 
 .benefit-box p {
     color: var(--text-color);
-    line-height: 1.6;
-    font-size: 1rem;
+    line-height: 1.4;
+    font-size: 0.95rem;
 }
 
 /* Responsividade para os benefícios */
