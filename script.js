@@ -82,29 +82,4 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.remove('active');
         });
     });
-
-    // Dropdown mobile toggle
-    const dropdownToggle = document.querySelector('.dropdown .nav-link');
-    const dropdown = document.querySelector('.dropdown');
-
-    dropdownToggle.addEventListener('click', function(e) {
-        if (window.innerWidth <= 968) {
-            e.preventDefault();
-            dropdown.classList.toggle('active');
-        }
-    });
-
-    // Fechar dropdown ao clicar fora
-    document.addEventListener('click', function(e) {
-        if (!dropdown.contains(e.target)) {
-            dropdown.classList.remove('active');
-        }
-    });
-
-    // Fechar dropdown ao redimensionar a janela
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 968) {
-            dropdown.classList.remove('active');
-        }
-    });
 }); 
