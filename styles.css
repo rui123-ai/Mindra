@@ -965,13 +965,15 @@ h2::after {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .product-feature {
     background: white;
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 15px;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
@@ -1010,23 +1012,14 @@ h2::after {
     line-height: 1.6;
 }
 
-/* Responsividade */
+/* Ajuste para telas menores */
 @media (max-width: 768px) {
-    .product-section {
-        padding: 4rem 5% 2rem;
-    }
-
-    .product-content h2 {
-        font-size: 1.8rem;
-        margin-bottom: 2rem;
-    }
-
     .product-grid {
         grid-template-columns: 1fr;
-        gap: 1.5rem;
+        padding: 0 1rem;
     }
 
     .product-feature {
-        padding: 1.5rem;
+        padding: 2rem;
     }
 } 
