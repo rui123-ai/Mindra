@@ -384,6 +384,9 @@ h2::after {
 }
 
 .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     margin-top: 1.5rem;
 }
 
@@ -395,7 +398,6 @@ h2::after {
     transition: var(--transition);
     text-align: center;
     border: 1px solid rgba(0,0,0,0.05);
-    margin-top: 0.5rem;
 }
 
 .benefit-box:hover {
@@ -441,6 +443,10 @@ h2::after {
 
 /* Responsividade para os benefícios */
 @media (max-width: 968px) {
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .hero-text {
         padding-top: 20px;
     }
@@ -453,9 +459,5 @@ h2::after {
 @media (max-width: 640px) {
     .benefits-grid {
         grid-template-columns: 1fr;
-    }
-    
-    .benefit-box {
-        padding: 2rem 1.5rem;
     }
 } 
