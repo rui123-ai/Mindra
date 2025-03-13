@@ -1004,17 +1004,14 @@ h2::after {
     height: 100%;
     background: var(--gradient-primary);
     border-radius: 4px;
-    transition: width 1.5s ease-in-out;
+    width: 0;
+    transition: width 1.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Animação para as barras de progresso */
 @keyframes fillProgress {
     from { width: 0; }
     to { width: 100%; }
-}
-
-.progress-fill {
-    animation: fillProgress 1.5s ease-out forwards;
 }
 
 /* Responsividade */

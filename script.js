@@ -82,4 +82,29 @@ document.addEventListener('DOMContentLoaded', function() {
             navLinks.classList.remove('active');
         });
     });
+
+    // Animação das barras de progresso no scroll
+    function animateProgressBars() {
+        const metricsSection = document.querySelector('.metrics-grid');
+        const progressBars = document.querySelectorAll('.progress-fill');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    progressBars.forEach(bar => {
+                        const targetWidth = bar.parentElement.parentElement.querySelector('.metric-value').textContent;
+                        bar.style.width = targetWidth;
+                    });
+                    observer.unobserve(entry.target); // Para a animação acontecer apenas uma vez
+                }
+            });
+        }, {
+            threshold: 0.2 // Inicia a animação quando 20% da seção estiver visível
+        });
+
+        observer.observe(metricsSection);
+    }
+
+    // Inicializa a animação das barras de progresso
+    animateProgressBars();
 }); 
