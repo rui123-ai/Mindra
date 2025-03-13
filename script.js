@@ -92,14 +92,28 @@ document.addEventListener('DOMContentLoaded', function() {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     progressBars.forEach(bar => {
-                        const targetWidth = bar.parentElement.parentElement.querySelector('.metric-value').textContent;
+                        const metricValue = bar.parentElement.parentElement.querySelector('.metric-value');
+                        const targetWidth = metricValue.textContent;
+                        
+                        // Adiciona classes de animação
+                        bar.classList.add('animated');
+                        metricValue.classList.add('animated');
+                        
+                        // Anima a barra
                         bar.style.width = targetWidth;
+                        
+                        // Remove as classes de animação após a conclusão
+                        setTimeout(() => {
+                            bar.classList.remove('animated');
+                            metricValue.classList.remove('animated');
+                        }, 2000);
                     });
-                    observer.unobserve(entry.target); // Para a animação acontecer apenas uma vez
+                    
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
-            threshold: 0.2 // Inicia a animação quando 20% da seção estiver visível
+            threshold: 0.2
         });
 
         observer.observe(metricsSection);
